@@ -2,110 +2,78 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="style.css">
-    <link rel="script" href="script.js">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Most Affordable Server</title>
+    <meta name="language" content="en">
+    <meta name="description"
+        content="Discover reliable server and hosting solutions tailored to your needs at [Your Website Name]. We specialize in delivering cutting-edge hosting services, including shared, VPS, and dedicated hosting, ensuring your website's optimal performance. Take advantage of our expertise in custom server configurations, allowing you to build a server environment that perfectly matches your business requirements. Additionally, we offer advanced storage solutions, empowering you with scalable and secure data management. Explore our range of cost-effective plans and enhance your online presence with seamless server solutions">
+    <meta name="keywords" content="web services, amazon web services, server,sql server,free website hosting, free domain and hosting, hosting, development server, sws,https://hosting.sombti-server.online,">
+    <meta name="author" content="Sombit Pramanik">
+    <meta property="og:title" content="Sombit Web Services">
+    <meta property="og:description" content="Discover reliable server and hosting solutions tailored to your needs at [Your Website Name]. We specialize in delivering cutting-edge hosting services, including shared, VPS, and dedicated hosting, ensuring your website's optimal performance. Take advantage of our expertise in custom server configurations, allowing you to build a server environment that perfectly matches your business requirements. Additionally, we offer advanced storage solutions, empowering you with scalable and secure data management. Explore our range of cost-effective plans and enhance your online presence with seamless server solutions.">
+    <meta property="og:image" content="/logo.png">
+    <meta property="og:url" content="https://hosting.sombti-server.online">
+    <meta property="og:type" content="website">    
+    <link rel="icon" href="/sws.ico" type="image/x-icon">
+    <title>Sombit Web Services</title>
+    <!-- 
+        Website External Page's and Style Link Section
+     -->
+     <link rel="stylesheet" href="responsive.css">
+     <link rel="stylesheet" href="style.css">
+     <!-- 
+        Internal CSS Goes down
+      -->
+    <style>
+        
+    </style>
 </head>
 
 <body>
-    <section class="body">
-        <header>
-            <nav>
-                <li> <a href="#home">home</a></li>
-                <li> <a href="#why_us">why we </a></li>
-                <li> <a href="#price">pricing</a></li>
-                <li> <a href="#contact_us">contact us</a></li>
-            </nav>
-        </header>
-        <section id="home">
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">hosting's</button>
+            <div class="dropdown-content" >
+                <a href="#hosting" >web hosting</a>
+                <a href="#custom-server">custom hosting</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">server's</button>
+            <div class="dropdown-content">
+                <a href="#server">Development server</a>
+                <a href="#storage">storage Server <br> (Nextcloud)</a>
+            </div>
+        </div>
+    </div>
+    <div class="popup" id="popup">
+        <p>Exiting offer Get 5% off <br> every time on Purchase</p>
+        <button class="popup-button" onclick="closePopup()">Collect Now</button>
+    </div>
+    <div class="blur-background">
+        <main>
+            <span>our pluse point >>>></span>
+            <div id="typing-container"></div>
+            <section id="home">
 
-        </section>
-        <section id="why_us">
+            </section>
+            <section id="hosting">
 
-        </section>
-        <section id="price">
+            </section>
+            <section id="custom-server">
 
-        </section>
-        <section id="contact_us">
-            <form name="feedback-form" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" placeholder="Enter Your Name" name="name" required>
-                <br>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter Your Email Address" required>
-                <br>
-                <label for="subject">Subject:</label>
-                <input type="text" id="subject" name="subject" placeholder="What is Your Email Subject" required><br>
-                <label for="message">Message:</label>
-                <br>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                <br>
-                <button type="submit" id="submit_btn" name="submit">Send Message</button>
-                <span id="success"></span>
-            </form>
-        </section>
-    </section>
-    <footer>
+            </section>
+            <section id="server">
 
-    </footer>
+            </section>
+            <section id="storage">
+                
+            </section>
+        </main>
+    </div>
+
 </body>
 
 </html>
-<!-- 
-<?php
-
-//Import PHPMailer classes into the global namespace
-//These must be at the top of your script, not inside a function
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
-
-if(isset($_POST['submit'])){
-  $name = $_POST['name'];
-  $email = $_POST['email'];
-  $subject = $_POST['subject'];
-  $msg = $_POST['message'];
-
-
-
-  //Load Composer's autoloader
-  // require 'vendor/autoload.php';
-  require 'PHPMailer/Exception.php';
-  require 'PHPMailer/PHPMailer.php';
-  require 'PHPMailer/SMTP.php';
-
-  //Create an instance; passing `true` enables exceptions
-  $mail = new PHPMailer(true);
-
-  try {
-      //Server settings
-      // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-      $mail->isSMTP();                                            //Send using SMTP
-      $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-      $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-      $mail->Username   = 'it2238@cemk.ac.in';                     //SMTP username
-      $mail->Password   = 'Password';                               //SMTP password
-      $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-      $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-      //Recipients
-      $mail->setFrom('it2238@cemk.ac.in', 'Resume Website');
-      $mail->addAddress('m.sombitpramanik@gmail.com', 'Resume Website Contact me Form');     //Add a recipient
-
-      //Content
-      $mail->isHTML(true);                                  //Set email format to HTML
-      $mail->Subject = "$subject";
-      $mail->Body    = "Sender name : $name <br>Sender Email : $email <br>Message : $msg <br>";
-
-      $mail->send();
-      echo "<div class='success'>Massage has been send !</div>";
-  }
-  catch (Exception $e) {
-      echo "<div class='alert'>Message could not be sent. Mailer Error: {$mail->ErrorInfo}</div>";
-  }
-}
-?>
-
- -->
+<script src="script.js"></script>

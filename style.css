@@ -1,53 +1,168 @@
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<   FOR COMMON   >>>>>>>>>>>>>>>>>>> */
 :root {
-    --color: rgb(179, 237, 233);
-    --back-color: #333335;
-    --text_color : blanchedalmond;
+  --back-color: #333335;
+  --text-color: #a0a0a0;
+  --dark-text-color: black;
+  --link-color: #66d9ef;
+  --Button-background: #cf61d1;
+  --button-hover-color: #ffd700;
 }
-
 body {
-    background-color: var(--back-color) !important;
-    color: var(--color) !important;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    scroll-behavior: smooth;
-    text-align: center;
+  scroll-behavior: smooth;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--back-color);
+  color: var(--text-color);
+}
+main {
+  margin: 1em;
+  margin-top: 4em;
+  text-transform: capitalize;
+}
 
-}
-.body{
-    box-shadow: 0px 4px 8px 2px rgba(62, 219, 167, 0.5);
-    border-radius: .5em;
-    padding: 1em;
-    color: var(--text_color) ;
-}
 /*  <<<<<<<<<<<<<<<<<<<<<<<<<<  HEADER >>>>>>>>>>>>>>>>>>>>>> */
-nav {
-    /* border: 2px solid red; */
-    /* <<<<<  Debug */
-    justify-content: space-around;
-    display: flex;
-    text-transform: capitalize;
-    padding: .8em 0.2em;
-    box-shadow: 0px 4px 8px 2px rgba(62, 219, 167, 0.5);
-    border-radius: .5em;
-  
+
+.navbar {
+  top: 0;
+  right: 0;
+  left: 0;
+  border-radius: 0em 0em 1em 1em;
+  position: fixed;
+  box-shadow: 0px 4px 8px 2px rgba(181, 202, 195, 0.5);
+
+  background-color: #333;
 }
 
-nav li {
-    text-decoration: none;
-    list-style-type: none;
-
+.navbar a {
+  text-transform: capitalize;
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-a {
-    padding: .2em;
-    text-decoration: none;
-    color: var(--text_color) ;
-
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
 }
-a:hover {
-    transition: .4s;
-    transform: scale(2);
-    /* padding-top: .1em;
-    padding-bottom: .1em; */
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  padding: 14px 16px;
+  margin: 0;
+}
+.dropbtn {
+  text-transform: capitalize;
+}
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  background-color: #ddd;
+  color: black;
+}
+
+.dropdown-content {
+  text-transform: capitalize;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: min-content;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* <<<<<<<<<<<<<<<<<< HOME >>>>>>>>>>>> */
+#home {
+  margin-top: 2em;
+  height: max-content;
+  box-shadow: 0px 4px 8px 2px rgba(62, 219, 167, 0.5);
+  border-radius: 0.5em;
+}
+#typing-container {
+  font-size: 18px;
+  font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-transform: capitalize;
+  padding: 10px;
+  width: 300px;
+  color: white;
+  height: 30px;
+  margin-left: 3vw;
+}
+.re_button {
+  background-color: blue;
+
+  padding: 0.7em;
+  border-radius: 0.5em;
+}
+.popup {
+  text-transform: capitalize;
 }
 /*  <<<<<<<<<<<<<<<<<<< CONTACT PAGE   >>>>>>>>>>>>>>>>>>>>>> */
+#contact_us {
+  padding: 1.2em;
+  margin-top: 2em;
+  box-shadow: 0px 4px 8px 2px rgba(62, 219, 167, 0.5);
+  border-radius: 0.5em;
+}
+
+/* New Style */
+
+/* Styles for the blur effect */
+.blur-background {
+  filter: blur(1.2px);
+  /* Adjust the blur intensity as needed */
+}
+
+/* Styles for the popup */
+.popup {
+  border-radius: 1em;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+/* Styles for the button */
+.popup-button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.2em;
+}
