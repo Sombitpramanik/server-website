@@ -1,0 +1,125 @@
+:root {
+  --back-color: #333335;
+  --text-color: #a0a0a0;
+  --dark-text-color: black;
+  --link-color: #66d9ef;
+  --Button-background: #cf61d1;
+  --button-hover-color: #ffd700;
+}
+
+body {
+  scroll-behavior: smooth !important;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--back-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+input {
+  margin: 1em;
+}
+@media only screen and (max-width: 600px) {
+  body {
+    flex-direction: column;
+  }
+  h1 {
+    text-transform: capitalize;
+    font-size: 21px;
+  }
+  .ref_form {
+    width: 80% !important;
+    margin: 1em;
+  }
+  input {
+    max-width: 85% !important;
+    border: 2px solid red !important;
+  }
+}
+@media only screen and (min-width: 601px) {
+  body {
+    margin: 1em !important;
+    text-transform: capitalize;
+  }
+  h1 {
+    text-transform: capitalize;
+    font-weight: bold;
+  }
+  .ref_form {
+    width: 80% !important;
+    margin: 1em;
+  }
+  input {
+    max-width: 85% !important;
+    border: 2px solid red !important;
+    border-radius: 0.5em;
+    width: 65% !important;
+  }
+}
+@media only screen and (min-width: 601px) {
+  .ref_form label {
+    /* display: flow-root; */
+    margin-bottom: 8px;
+    color: var(--dark-text-color);
+  }
+}
+
+.ref_form {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 80% !important;
+  text-align: center;
+}
+
+.ref_form h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--dark-text-color);
+}
+
+.ref_form label {
+  /* display: block; */
+  margin-bottom: 8px;
+  color: var(--dark-text-color);
+}
+
+#login,
+#submit {
+  margin: 0.8em;
+  background-color: var(--Button-background);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#login:hover,
+#submit:hover {
+  background-color: var(--button-hover-color);
+}
+
+#reg_btn {
+  background-color: var(--Button-background);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin-top: 10px;
+}
+
+#reg_btn a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+#reg_btn:hover {
+  background-color: var(--button-hover-color);
+}

@@ -1,24 +1,4 @@
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<   FOR COMMON   >>>>>>>>>>>>>>>>>>> */
-:root {
-  --back-color: #333335;
-  --text-color: #a0a0a0;
-  --dark-text-color: black;
-  --link-color: #66d9ef;
-  --Button-background: #cf61d1;
-  --button-hover-color: #ffd700;
-}
-body {
-  scroll-behavior: smooth !important;
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: var(--back-color);
-  color: var(--text-color);
-}
-main {
-  margin: 1em;
-  margin-top: 4em;
-  text-transform: capitalize;
-}
 
 /*  <<<<<<<<<<<<<<<<<<<<<<<<<<  HEADER >>>>>>>>>>>>>>>>>>>>>> */
 
