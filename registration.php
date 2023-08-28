@@ -1,12 +1,12 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 require 'config.php';
-// if(!empty($_SESSION["id"])){
-//     header("location: /index.php");
-// }
 session_unset();
 session_destroy();
-// header("location: login.php");
-// exit();
+
 if (isset($_POST["submit"])) {
     $first_name = $_POST["f_name"];
     $last_name = $_POST["l_name"];
@@ -16,12 +16,13 @@ if (isset($_POST["submit"])) {
     $c_password = $_POST["c_password"];
     $duplicate = mysqli_query($conn, "SELECT * FROM login_data Where email = '$email'");
 
+
     if (mysqli_num_rows($duplicate) > 0) {
         echo
         "<script>alert('Email and User Name is Already Taken\nUse Another One');</script>";
     } else {
         if ($password == $c_password) {
-            $query = "INSERT INTO login_data VALUES('','$first_name','$last_name','$email','$mobile','$password')";
+            $query = "INSERT INTO login_data VALUES('$first_name','$last_name','$email','$mobile','$password')";
             mysqli_query($conn, $query);
             echo
             "<script>alert('Registration successful ! your username is $email');</script>";
@@ -31,7 +32,6 @@ if (isset($_POST["submit"])) {
         }
     }
 }
-
 
 ?>
 
@@ -81,11 +81,11 @@ if (isset($_POST["submit"])) {
         <label for="c_password">Confirm</label>
         <input type="password" id="c_password" name="c_password" required value="" placeholder="Re-Enter Same Super Strong Password"><br>
         <button type="submit" name="submit" id="submit"> Register !</button>
-        <button  name="login" id="login"><a style="text-decoration: none;" href="/login.php">Log IN</a></button>
+        <button name="login" id="login"><a style="text-decoration: none;" href="/login.php">Log IN</a></button>
 
     </form>
     <br>
-   
+
 
 </body>
 

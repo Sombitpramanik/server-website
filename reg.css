@@ -52,6 +52,7 @@ input {
     margin: 1em;
   }
   input {
+    height:45px;
     max-width: 85% !important;
     border: 2px solid red !important;
     border-radius: 0.5em;

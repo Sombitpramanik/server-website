@@ -1,13 +1,24 @@
 <?php
-require 'config.php';
-if (!empty($_SESSION["id"])) {
-    $id = $_SESSION["id"];
-    $result = mysqli_query($conn, "SELECT * FROM login_data WHERE id = $id");
-    $row = mysqli_fetch_assoc($result);
-} else {
-    header("location: login.php");
-}
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
+require 'config.php';
+
+
+if (!empty($_SESSION["session_token"])) {
+    $session_token = $_SESSION["session_token"];
+    $email = $session_token;
+
+    $result = mysqli_query($conn, "SELECT * FROM login_data WHERE email = '$email'");
+    $row = mysqli_fetch_assoc($result);
+
+    if (!$row) {
+        header("location: login.php"); // Invalid session token, redirect to login
+    }
+} else {
+    header("location: login.php"); // No session token, redirect to login
+}
 
 ?>
 <!DOCTYPE html>

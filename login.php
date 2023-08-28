@@ -1,8 +1,10 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 require 'config.php';
-// if(!empty($_SESSION["id"])){
-//     header("location: /index.php");
-// }
+
 if (isset($_POST["submit"])) {
     $email = $_POST["email"];
     $password = $_POST["password"];
@@ -12,10 +14,11 @@ if (isset($_POST["submit"])) {
 
     if (mysqli_num_rows($result) > 0) {
         if ($password == $row["password"]) {
-            $_SESSION["login"] = true; // Set login session variable
-            $_SESSION["id"] = $row["id"];
+            $session_token = $email; // Use email as session token
+            $_SESSION["login"] = true;
+            $_SESSION["session_token"] = $session_token;
             header("location: index.php");
-            exit(); // Important: terminate the script after redirection
+            exit();
         } else {
             echo "<script>alert('Wrong Password');</script>";
         }
